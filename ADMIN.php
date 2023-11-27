@@ -1,3 +1,21 @@
+<?php 
+        
+        
+
+        session_start();
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == false) {
+                
+                header("Location: index.php");
+                
+        } else if (empty($_SESSION['admin'])) {
+            header("Location: index.php");
+        }
+        
+    
+    ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +36,7 @@
         <a href="ADD_TACK.php"
             class="w-fit h-9 bg-blue-800 rounded-md p-1 text-sm font-bold text-white flex items-center">CREAT
             ANONNCE</a>
+        <a href="LOGOUT.php" class="text-base font-bold text-blue-800 flex items-center">LOG OUT</a>
     </div>
     <div class="w-screen h-16 "></div>
     <div class="w-screen h-screen   flex gap-3 fixed top-16 p-3">

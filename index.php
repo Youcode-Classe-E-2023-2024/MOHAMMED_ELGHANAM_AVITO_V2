@@ -1,3 +1,12 @@
+<?php
+session_start();
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+                
+                header("Location: admin.php");
+                
+        }
+        ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,11 +18,20 @@
 </head>
 
 <body class="w-screen h-screen flex flex-col justify-center items-center bg-slate-100 gap-6">
+    <?php if (isset($_GET["incorrect"])) {?>
 
+        <div class="w-[96%] h-16 bg-pink-100 rounded-xl flex justify-start items-center outline outline-1 outline-pink-400 gap-3 px-8">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
+                <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
+            <p class="text-2xl font-mono text-pink-600 ">This information is incorrect</p>
+        </div>
+
+    <?php }?>
     <div class="w-fit h-fit" id="login" style="display: block;">
         <h1 class="text-center text-5xl font-bold text-blue-700">LOG IN</h1>
         <form action="TRETEMMENT_LOGIN.php" method="post"
-            class="w-fit h-fit flex justify-center items-center flex-col  rounded-2xl gap-4">
+        class="w-fit h-fit flex justify-center items-center flex-col  rounded-2xl gap-4">
+        
 
             <div class="f">
                 <h3 class="font-bold text-slate-500">Email</h3>
@@ -30,10 +48,9 @@
 
             <input type="submit" value="LOG IN" name="send"
                 class="w-64 h-10 rounded-xl bg-blue-500 font-bold text-slate-50 text-xl">
-            <a href="AFFICHAGE.php"
-                class="w-64 h-10 flex justify-center items-center rounded-xl bg-blue-500 font-bold text-slate-50 text-xl">BACK</a>
+            
             <p class="w-64">Pas encore inscrit? <a onclick="register()"
-                    class="text-blue-700 underline decoration-1 ">S'inscrire gratuitement.</a></p>
+                    class="text-blue-700 underline decoration-1 ">SIGN UP</a></p>
 
 
 

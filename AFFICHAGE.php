@@ -9,18 +9,26 @@
 </head>
 
 <body class="w-screen h-full flex flex-col justify-center items-center gap-10">
-<div class="w-screen h-16 bg-white flex justify-between items-center px-7 fixed top-0">
+    <div class="w-screen h-16 bg-white flex justify-between items-center px-7 fixed top-0">
         <img class="w-32 h-10 " src="IMAGE/avito-logo 1.png" alt="">
         <div class="w-fit h-fit  flex justify-center  gap-1">
-            <a href="CREATE.html" class="w-fit h-9 bg-blue-800 rounded-md p-1 text-sm font-bold text-white flex items-center">CREAT ANONNCE</a>
-            <a href="index.php" class="text-base font-bold text-blue-800 flex items-center">LOG IN</a>
+
+            <?php 
+            session_start();
+            if (isset($_SESSION["role"])) {
+            if ($_SESSION['role']=="vendeur") { ?>
+            <a href="ADD_TACK.php" class="w-fit h-9 bg-blue-800 rounded-md p-1 text-sm font-bold text-white flex items-center">CREAT ANONNCE</a>
+            <?php } }?>
+
+            <a href="LOGOUT.php" class="text-base font-bold text-blue-800 flex items-center">LOG OUT</a>
+
         </div>
     </div>
     <div class="w-screen h-16"></div>
 
     <?php
     include_once'CONNECT_BASE.php'; 
-    $select_data = "SELECT * FROM med";
+    $select_data = "SELECT * FROM  TABLE_ANONNCE ";
     $query = mysqli_query($connect,$select_data);
     
 
@@ -48,9 +56,10 @@
             }
         echo '</div>';
 
-
         
     ?>
+
+    
 </body>
 
 </html>
