@@ -5,6 +5,12 @@ session_start();
                 header("Location: admin.php");
                 
         }
+
+        if (isset($_SESSION['affichage']) && $_SESSION['affichage'] == true) {
+                
+            header("Location: AFFICHAGE.php");
+            
+    }
         ?>
 
 <!DOCTYPE html>

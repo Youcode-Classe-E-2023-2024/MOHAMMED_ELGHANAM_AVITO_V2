@@ -18,6 +18,25 @@
     $row = mysqli_fetch_assoc($query);
 
 
+    
+
+    if (isset($row)) {
+        if ($emails === $row['email'] && $pwdd === $row["password"]) {
+            $_SESSION['affichage'] = true;
+                 header("Location:AFFICHAGE.php");
+                 exit;
+              
+            }else {
+                header("Location:index.php?incorrect=true");
+                exit;
+            }
+        
+    }else {
+        header("Location:index.php?incorrect=true");
+    }
+
+
+
     //    if (empty($row)) {
     //      header("Location:index.php?incorrect=true");
     //      exit;
@@ -30,20 +49,6 @@
     //      exit;
     //  }
 
-
-    if (isset($row)) {
-        if ($emails === $row['email'] && $pwdd === $row["password"]) {
-                 header("Location:AFFICHAGE.php");
-                 exit;
-              
-            }else {
-                header("Location:index.php?incorrect=true");
-                exit;
-            }
-        
-    }else {
-        header("Location:index.php?incorrect=true");
-    }
 
 
 
