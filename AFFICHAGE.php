@@ -58,7 +58,7 @@
 
 
             <div class="w-64 h-96 flex flex-col justify-center items-center rounded-xl border-solid border-x-2 border-y-2 border-gray-600 gap-3 p-2">      
-                <h1 class="text-xl font-bold text-blue-500 "><?php echo $row['username'] ?></h1>
+                <h1 class="text-xl font-bold text-blue-800 "><?php echo $row['username'] ?></h1>
                 <img src="data:image/jpeg;base64,<?php echo base64_encode($row['IMAGE']); ?>" alt="" class="w-56 h-28 rounded-xl">
                 
                 <p class=" text-center"><?php echo $row['description'] ?></p>
@@ -88,6 +88,32 @@
             </div>
         <?php } ?>        
     </div>
+
+
+
+    <footer class="w-screen h-52 bg-white shadow dark:bg-blue-950 ">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-center">
+            
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">About</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.</span>
+    </div>
+</footer>
 
 
 

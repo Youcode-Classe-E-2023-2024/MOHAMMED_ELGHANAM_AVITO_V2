@@ -34,7 +34,7 @@
             <input type="text" name="desc" class="w-64 h-16 rounded-xl border-solid border-x-2 border-y-2 border-gray-600" required>
         </div>
         <input type="submit" value="Edite" name="send" class="w-64 h-10 rounded-xl bg-blue-500 font-bold text-slate-50 text-xl">
-        <a href="AFFICHAGE.php" class="w-64 h-10 flex justify-center items-center rounded-xl bg-blue-500 font-bold text-slate-50 text-xl" >BACK</a>
+        <a href="ADMIN.php" class="w-64 h-10 flex justify-center items-center rounded-xl bg-blue-500 font-bold text-slate-50 text-xl" >BACK</a>
 
     </form>
     

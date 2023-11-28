@@ -33,9 +33,7 @@
 
     <div class="w-screen h-16 bg-white flex justify-between items-center px-7 fixed top-0 shadow-lg shadow-blue-200">
         <img class="w-32 h-10 " src="IMAGE/avito-logo 1.png" alt="">
-        <a href="ADD_TACK.php"
-            class="w-fit h-9 bg-blue-800 rounded-md p-1 text-sm font-bold text-white flex items-center">CREAT
-            ANONNCE</a>
+        
         <a href="LOGOUT.php" class="text-base font-bold text-blue-800 flex items-center">LOG OUT</a>
     </div>
     <div class="w-screen h-16 "></div>
@@ -80,7 +78,7 @@
 
 
 
-                <div style="display: block;" class="w-[70%] h-screen px-[0.3%]  py-[0.3%] flex flex-col gap-3 overflow-auto "
+                <div style="display: block;" class="w-[70%] h-screen px-[0.3%]  py-[0.3%] flex flex-col gap-5 overflow-auto "
                     id="users">
                     <?php
                     include_once'CONNECT_BASE.php'; 
@@ -106,8 +104,8 @@
 
 
                         <div class="w-52 h-10 flex  items-center justify-evenly ">
-                            <a href="EDIT.php" class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">EDITE</a>
-                            <a href="DELET_WITH_ID.php" class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">SUPPRIME</a>
+                            <a href="ADMIN.php" class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">EDITE</a>
+                            <a href="ADMIN.php" class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">SUPPRIME</a>
                         </div>
 
                     </div>
@@ -148,9 +146,11 @@
 
                                 <div class="w-fit h-fit flex flex-col items-center justify-evenly gap-2">
 
-                                    <a href="EDIT.php"
+                                <a href="add_anonnce_admin.php" class="w-fit h-9 bg-blue-600 rounded-md p-1 text-sm font-bold text-white flex items-center">CREAT ANONNCE</a>
+
+                                    <a href="MODIFIER.php"
                                     class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">EDITE</a>
-                                    <a href="DELET_WITH_ID.php"
+                                    <a href="SUPPRIMER.php"
                                     class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">SUPPRIME</a>
 
                                 </div>
