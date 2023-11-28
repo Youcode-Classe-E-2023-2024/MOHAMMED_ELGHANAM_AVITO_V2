@@ -13,15 +13,17 @@
     
     
     
-    $SELECT_data_signup = "SELECT * FROM SIGNUP WHERE email='$emails' AND password='$pwdd'";
+    $SELECT_data_signup = "SELECT * FROM SIGNUP WHERE email='$emails'";
     $query = mysqli_query($connect,$SELECT_data_signup);
     $row = mysqli_fetch_assoc($query);
-
-
+    $role = $row["role"];
     
 
     if (isset($row)) {
-        if ($emails === $row['email'] && $pwdd === $row["password"]) {
+        if ($emails === $row['email'] && password_verify($pwdd, $row["password"])) {
+            $_SESSION["nameuser"] = $nameuser;
+            $_SESSION["email"] = $email;
+            $_SESSION["role"] = $role;
             $_SESSION['affichage'] = true;
                  header("Location:AFFICHAGE.php");
                  exit;

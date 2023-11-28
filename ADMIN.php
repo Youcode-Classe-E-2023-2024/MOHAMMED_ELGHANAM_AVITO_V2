@@ -74,86 +74,92 @@
         </div>
         <!-- ------------------USERS--------------------- -->
 
-        <?php
-            include_once'CONNECT_BASE.php'; 
-            $select_data = "SELECT * FROM  signup ";
-            $query = mysqli_query($connect,$select_data);
-    
+        
+            
 
 
 
 
-                echo'<div style="display: block;" class="w-[70%] h-screen px-[0.3%]  py-[0.3%] flex flex-col gap-3 overflow-auto "
-                    id="users">';
-
-
-                    while ($row = mysqli_fetch_assoc($query)) {
-
-                   echo' <div class="w-[100%] h-20  rounded-md  flex justify-between items-center px-3 outline outline-offset-2 outline-1 shadow-lg shadow-blue-200 ">';
-
-                        echo'<div class="w-80 h-14   flex justify-start items-center px-3 gap-5 border-r-2 border-gray-500 ">';
-                             echo'<img src="IMAGE/DSC_2315 copy.jpg" alt="" class="w-12 h-12 rounded-full ">';
-                             echo'<div class="w-fit h-fit flex flex-col">';
-                                     echo'<h2 class="text-gray-600 font-bold">' . $row['nameuser'] . '</h2>';
-                                     echo'<p class="text-gray-500">' . $row['role'] . '</p>';
-                             echo'</div>';
-                        echo'</div>';
+                <div style="display: block;" class="w-[70%] h-screen px-[0.3%]  py-[0.3%] flex flex-col gap-3 overflow-auto "
+                    id="users">
+                    <?php
+                    include_once'CONNECT_BASE.php'; 
+                    $select_data = "SELECT * FROM  signup ";
+                    $query = mysqli_query($connect,$select_data);
+            
 
 
 
-                        echo'<div class="w-52 h-10 flex  items-center justify-evenly ">';
 
-                             echo'<a href="EDIT.php" class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">EDITE</a>';
-                             echo'<a href="DELET_WITH_ID.php" class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">SUPPRIME</a>';
+                    while ($row = mysqli_fetch_assoc($query)) { ?>
 
-                        echo'</div>';
+                    <div class="w-[100%] h-20  rounded-md  flex justify-between items-center px-3 outline outline-offset-2 outline-1 shadow-lg shadow-blue-200 ">
 
-                    echo'</div>';
+                        <div class="w-80 h-14   flex justify-start items-center px-3 gap-5 border-r-2 border-gray-500 ">
+                        <img src="IMAGE/DSC_2315 copy.jpg" alt="" class="w-12 h-12 rounded-full ">
+                        <div class="w-fit h-fit flex flex-col">
+                                <h2 class="text-gray-600 font-bold"> <?php echo $row['nameuser']; ?> </h2>
+                                <p class="text-gray-500"> <?php echo $row['role']; ?> </p>
+                        </div>
+                        </div>
 
-                    }
+
+
+                        <div class="w-52 h-10 flex  items-center justify-evenly ">
+                            <a href="EDIT.php" class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">EDITE</a>
+                            <a href="DELET_WITH_ID.php" class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">SUPPRIME</a>
+                        </div>
+
+                    </div>
+
+                  <?php  }  ?>
 
 
 
-                echo'</div>';
+                </div>
 
-        ?>
+        
 
         <!-- ----------------------ANONNCE----------------------------------- -->
 
-        <?php
-            include_once'CONNECT_BASE.php'; 
-            $select_data = "SELECT * FROM  TABLE_ANONNCE ";
-            $query = mysqli_query($connect,$select_data);
+        
     
 
 
-            echo'<div style="display: none;" class="w-[70%] h-screen px-[0.3%]  py-[0.3%] flex flex-col gap-3 overflow-auto "
-                id="anonnce">';
-                while ($row = mysqli_fetch_assoc($query)) {
-                        echo'<div
-                            class="w-[100%] h-40  rounded-md  flex justify-between items-center px-3 outline outline-offset-2 outline-1 shadow-lg shadow-blue-200 ">';
-                            echo'<img src="IMAGE/05 2.png" alt="" class="w-64 h-36 rounded-md ">';
-                            echo'<hr class="w-20 h-[1.5%] rotate-90 bg-gray-600">';
-                            echo'<div class="w-fit h-fit flex flex-col">';
-                            echo'<h2 class="text-blue-600 text-xl font-bold">' . $row['username'] . '</h2>';
-                            echo'<p class="text-gray-500 font-bold">' . $row['prix'] . 'MAD</p>';
-                            echo'</div>';
-                            echo'<hr class="w-20 h-[1.5%] rotate-90 bg-gray-600">';
+            <div style="display: none;" class="w-[70%] h-screen px-[0.3%]  py-[0.3%] flex flex-col gap-3 overflow-auto "
+                id="anonnce">
 
-                            echo'<div class="w-fit h-fit flex flex-col items-center justify-evenly gap-2">';
+                <?php
+                    include_once'CONNECT_BASE.php'; 
+                    $select_data = "SELECT * FROM  TABLE_ANONNCE ";
+                    $query = mysqli_query($connect,$select_data);
 
-                                echo'<a href="EDIT.php"
-                                    class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">EDITE</a>';
-                                echo'<a href="DELET_WITH_ID.php"
-                                    class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">SUPPRIME</a>';
+                while ($row = mysqli_fetch_assoc($query)) { ?>
+                        <div
+                            class="w-[100%] h-40  rounded-md  flex justify-between items-center px-3 outline outline-offset-2 outline-1 shadow-lg shadow-blue-200 ">
+                            <img src="data:image/jpeg;base64,<?php echo base64_encode($row['IMAGE']); ?>" alt="" class="w-56 h-28 rounded-xl">
+                
+                            <hr class="w-20 h-[1.5%] rotate-90 bg-gray-600">
+                            <div class="w-fit h-fit flex flex-col">
+                            <h2 class="text-blue-600 text-xl font-bold">  <?php echo $row['username']?> </h2>
+                            <p class="text-gray-500 font-bold"> <?php echo $row['prix']?> MAD</p>
+                            </div>
+                            <hr class="w-20 h-[1.5%] rotate-90 bg-gray-600">
 
-                            echo'</div>';
+                                <div class="w-fit h-fit flex flex-col items-center justify-evenly gap-2">
 
-                            echo'</div>';
-                }
+                                    <a href="EDIT.php"
+                                    class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">EDITE</a>
+                                    <a href="DELET_WITH_ID.php"
+                                    class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">SUPPRIME</a>
 
-            echo'</div>';
-        ?>
+                                </div>
+
+                            </div>
+               <?php } ?>
+
+            </div>
+        
     </div>
     <script src="script.js"></script>
 </body>
