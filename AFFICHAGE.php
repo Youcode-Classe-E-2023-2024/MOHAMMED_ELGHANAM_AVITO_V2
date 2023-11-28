@@ -69,7 +69,7 @@
                             if (isset($_SESSION['role'])) { 
                                 if ($_SESSION['role'] == "vendeur" ) { ?>
                             <a href="EDIT.php" class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">EDITE</a>
-                            <a href="DELET_WITH_ID.php" class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">SUPPRIME</a>
+                            <a href="DELET.php?id=<?= $row['id'] ?>" class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">SUPPRIME</a>
                             <?php }}
                             ?>
                                 

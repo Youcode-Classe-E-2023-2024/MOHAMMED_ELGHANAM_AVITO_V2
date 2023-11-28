@@ -150,7 +150,7 @@
 
                                     <a href="MODIFIER.php"
                                     class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">EDITE</a>
-                                    <a href="SUPPRIMER.php"
+                                    <a href="DELET.php?id=<?= $row['id'] ?>"
                                     class=" w-20 h-8 flex justify-center items-center rounded-xl bg-blue-600 text-white font-bold text-xs">SUPPRIME</a>
 
                                 </div>
